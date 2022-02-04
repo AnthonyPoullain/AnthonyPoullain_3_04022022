@@ -1,9 +1,10 @@
-/* Shrikhand */
-@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
+@use "../utils/mixins" as *;
 
-/* Roboto */
+/* fonts */
+@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
 
+/* reset */
 *,
 *::before,
 *::after {
@@ -26,4 +27,8 @@ a {
 
 body {
   font-family: "Roboto", "sans-serif";
+}
+
+main > * > * {
+  @include container;
 }
