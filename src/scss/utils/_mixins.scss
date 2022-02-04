@@ -1,0 +1,12 @@
+@use "../utils/variables" as *;
+
+@mixin center-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin main-title {
+  font-size: $size-main-title;
+  font-weight: 700;
+}

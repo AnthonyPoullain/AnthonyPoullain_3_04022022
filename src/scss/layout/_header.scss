@@ -1,0 +1,11 @@
+@use "../base/base";
+@use "../utils/mixins" as *;
+
+.header {
+  @include center-flex;
+
+  &__logo {
+    width: 165px;
+    margin: 20px 0 10px 0;
+  }
+}
