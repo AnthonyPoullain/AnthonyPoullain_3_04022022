@@ -4,6 +4,7 @@ $color-secondary: #ff79da;
 $color-tertiary: #99e2d0;
 
 $color-primary-light: #f5edfe;
+$color-tertiary-dark: #128667;
 
 $color-light-gray: #f6f6f6;
 $color-medium-gray: #eaeaea;
@@ -12,3 +13,20 @@ $color-dark-gray: #353535;
 
 /* fonts */
 $size-main-title: 1.5rem;
+$size-card-title: 1.05rem;
+$size-card-text: 1rem;
+
+$shadow-card: rgba(50, 50, 93, 0.15) 0px 6px 12px -2px,
+  rgba(0, 0, 0, 0.1) 0px 3px 7px -3px;
+
+$gradient-btn: linear-gradient(
+  170deg,
+  $color-secondary 0%,
+  $color-primary 100%
+);
+
+$gradient-heart: linear-gradient(
+  0deg,
+  $color-secondary 0%,
+  $color-primary 100%
+);
