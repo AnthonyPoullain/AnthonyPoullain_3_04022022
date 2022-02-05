@@ -1,8 +1,10 @@
 @use "../base/base";
 @use "../utils/mixins" as *;
+@use "../utils/variables" as *;
 
 .header {
   @include center-flex;
+  box-shadow: $shadow-card;
 
   &__logo {
     width: 165px;

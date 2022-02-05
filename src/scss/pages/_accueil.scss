@@ -5,6 +5,8 @@
 .location {
   background: $color-medium-gray;
   @include center-flex;
+  z-index: -1;
+  position: relative;
 
   &__text {
     font-weight: 500;
