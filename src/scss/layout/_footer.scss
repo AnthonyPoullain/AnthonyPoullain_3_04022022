@@ -1,0 +1,39 @@
+@use "../base/base" as *;
+@use "../utils/variables" as *;
+@use "../utils/mixins" as *;
+
+.footer {
+  background: $color-dark-gray;
+  padding: 20px 0;
+
+  &__content {
+    @include container;
+  }
+
+  &__logo {
+    display: block;
+    font-size: $size-card-title;
+    font-family: "Shrikhand", sans-serif;
+    color: white;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+
+  &__links {
+    font-size: $size-footer-text;
+    color: white;
+    line-height: 1.6;
+    font-weight: 300;
+
+    &--bold {
+      font-weight: 400;
+    }
+    i {
+      font-size: 0.8rem;
+      margin-right: 10px;
+    }
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

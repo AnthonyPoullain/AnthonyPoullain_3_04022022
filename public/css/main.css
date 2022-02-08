@@ -51,11 +51,45 @@ footer > * {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: rgba(50, 50, 93, 0.15) 0px 6px 12px -2px, rgba(0, 0, 0, 0.1) 0px 3px 7px -3px;
+  box-shadow: rgba(50, 50, 93, 0.15) 0px 6px 6px -2px, rgba(0, 0, 0, 0.1) 0px 3px 4px -3px;
 }
 .header__logo {
   width: 165px;
   margin: 20px 0 10px 0;
+}
+
+.footer {
+  background: #353535;
+  padding: 20px 0;
+}
+.footer__content {
+  padding: 0 20px;
+  margin: 0 auto;
+  max-width: 768px;
+}
+.footer__logo {
+  display: block;
+  font-size: 1.05rem;
+  font-family: "Shrikhand", sans-serif;
+  color: white;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.footer__links {
+  font-size: 0.95rem;
+  color: white;
+  line-height: 1.6;
+  font-weight: 300;
+}
+.footer__links--bold {
+  font-weight: 400;
+}
+.footer__links i {
+  font-size: 0.8rem;
+  margin-right: 10px;
+}
+.footer__links:hover {
+  text-decoration: underline;
 }
 
 .usage__card {
@@ -111,9 +145,11 @@ footer > * {
   overflow: hidden;
   margin-bottom: 15px;
   position: relative;
+  transition: transform 150ms ease-in-out;
 }
 .restaurants__card:hover {
   cursor: pointer;
+  transform: scale(1.01);
 }
 .restaurants__card-img {
   height: 175px;
@@ -150,15 +186,20 @@ footer > * {
   right: 25px;
   bottom: 30px;
   cursor: pointer;
+  transition: color 150ms ease-in-out;
 }
-.restaurants__card-heart .fas {
-  display: none;
-}
-.restaurants__card-heart:hover .far {
+.restaurants__card-heart .far {
   transform: translateX(125%);
 }
+.restaurants__card-heart .fas {
+  opacity: 0;
+  transition: opacity 150ms ease-in-out 150ms;
+}
+.restaurants__card-heart:hover {
+  color: #9356dc;
+}
 .restaurants__card-heart:hover .fas {
-  display: inline-block;
+  opacity: 1;
 }
 
 .location {
@@ -242,6 +283,7 @@ footer > * {
   font-weight: 500;
   padding: 15px 20px;
   background: linear-gradient(170deg, #ff79da 0%, #9356dc 100%);
+  box-shadow: rgba(50, 50, 93, 0.3) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   border-radius: 50px;
   margin: 15px 0;
   cursor: pointer;

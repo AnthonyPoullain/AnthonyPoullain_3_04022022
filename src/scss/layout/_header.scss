@@ -4,7 +4,7 @@
 
 .header {
   @include center-flex;
-  box-shadow: $shadow-card;
+  box-shadow: $shadow-header;
 
   &__logo {
     width: 165px;

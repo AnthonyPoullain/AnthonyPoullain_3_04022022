@@ -9,7 +9,7 @@
     margin-left: 12px;
     border-radius: 20px;
     background: $color-light-gray;
-    box-shadow: $shadow-card;
+    box-shadow: $shadow-cards;
     position: relative;
     margin-bottom: 20px;
     cursor: pointer;
@@ -59,13 +59,15 @@
   &__card {
     display: block;
     border-radius: 15px;
-    box-shadow: $shadow-card;
+    box-shadow: $shadow-cards;
     overflow: hidden;
     margin-bottom: 15px;
     position: relative;
+    transition: transform 150ms ease-in-out;
 
     &:hover {
       cursor: pointer;
+      transform: scale(1.01);
     }
 
     &-img {
@@ -101,23 +103,32 @@
       color: $color-tertiary-dark;
       background: $color-tertiary;
     }
+
     &-heart {
       font-size: 1.5rem;
       position: absolute;
       right: 25px;
       bottom: 30px;
       cursor: pointer;
+      transition: color 150ms ease-in-out;
+
+      .far {
+        transform: translateX(125%);
+      }
 
       .fas {
-        display: none;
+        opacity: 0;
+        transition: opacity 150ms ease-in-out 150ms;
       }
 
       &:hover {
+        color: $color-primary;
+
         .far {
-          transform: translateX(125%);
         }
+
         .fas {
-          display: inline-block;
+          opacity: 1;
         }
       }
     }
