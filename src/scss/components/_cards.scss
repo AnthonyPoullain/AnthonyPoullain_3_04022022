@@ -13,9 +13,11 @@
     position: relative;
     margin-bottom: 20px;
     cursor: pointer;
+    transition: 150ms ease-in-out;
 
     &:hover {
       background: $color-primary-light;
+      box-shadow: $shadow-cards-hover;
 
       .fas {
         color: $color-primary;
@@ -63,11 +65,12 @@
     overflow: hidden;
     margin-bottom: 15px;
     position: relative;
-    transition: transform 150ms ease-in-out;
+    transition: 150ms ease-in-out;
 
     &:hover {
       cursor: pointer;
       transform: scale(1.01);
+      box-shadow: $shadow-cards-hover;
     }
 
     &-img {

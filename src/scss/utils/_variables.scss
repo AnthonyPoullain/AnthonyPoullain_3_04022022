@@ -11,27 +11,37 @@ $color-medium-gray: #eaeaea;
 $color-gray: #7e7e7e;
 $color-dark-gray: #353535;
 
-/* fonts */
-$size-main-title: 1.5rem;
-$size-card-title: 1.05rem;
-$size-card-text: 1rem;
-$size-footer-text: 0.95rem;
-
-$shadow-header: rgba(50, 50, 93, 0.15) 0px 6px 6px -2px,
-  rgba(0, 0, 0, 0.1) 0px 3px 4px -3px;
-$shadow-cards: rgba(50, 50, 93, 0.15) 0px 6px 12px -2px,
-  rgba(0, 0, 0, 0.1) 0px 3px 7px -3px;
-$shadow-btn: rgba(50, 50, 93, 0.3) 0px 6px 12px -2px,
-  rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-
+/* gradients */
 $gradient-btn: linear-gradient(
   170deg,
   $color-secondary 0%,
   $color-primary 100%
 );
-
+$gradient-btn-hover: linear-gradient(
+  170deg,
+  $color-secondary 0%,
+  $color-primary 150%
+);
 $gradient-heart: linear-gradient(
   0deg,
   $color-secondary 0%,
   $color-primary 100%
 );
+
+/* font sizes */
+$size-main-title: 1.5rem;
+$size-card-title: 1.05rem;
+$size-card-text: 1rem;
+$size-footer-text: 0.95rem;
+
+/* shadows */
+$shadow-header: rgba(50, 50, 93, 0.15) 0px 6px 6px -2px,
+  rgba(0, 0, 0, 0.1) 0px 3px 4px -3px;
+$shadow-cards: rgba(50, 50, 93, 0.15) 0px 6px 12px -2px,
+  rgba(0, 0, 0, 0.1) 0px 3px 7px -3px;
+$shadow-cards-hover: rgba(50, 50, 93, 0.15) 0px 6px 12px -2px,
+  rgba(0, 0, 0, 0.1) 0px 6px 12px -3px;
+$shadow-btn: rgba(50, 50, 93, 0.3) 0px 6px 12px -2px,
+  rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+$shadow-btn-hover: rgba(50, 50, 93, 0.3) 0px 6px 12px -2px,
+  rgba(0, 0, 0, 0.3) 0px 3px 12px -3px;
