@@ -5,6 +5,19 @@
 .header {
   @include center-flex;
   box-shadow: $shadow-header;
+  position: fixed;
+  background: white;
+  top: 0;
+  height: 65px;
+  width: 100%;
+  z-index: 10;
+
+  &__arrow {
+    font-size: 1.5rem;
+    position: absolute;
+    left: 20px;
+    padding: 0 10px;
+  }
 
   &__logo {
     width: 165px;

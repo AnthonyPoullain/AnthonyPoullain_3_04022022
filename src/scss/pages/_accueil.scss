@@ -5,7 +5,6 @@
 .location {
   background: $color-medium-gray;
   @include center-flex;
-  z-index: -1;
   position: relative;
 
   &__text {
@@ -52,7 +51,6 @@
 
 .usage {
   padding: 50px 0;
-
   &__title {
     @include main-title;
     margin-bottom: 30px;
@@ -66,6 +64,12 @@
   &__title {
     @include main-title;
     margin-bottom: 30px;
+    position: relative;
+  }
+
+  &__anchor {
+    position: absolute;
+    top: -125px;
   }
 
   @media screen and (min-width: 768px) {

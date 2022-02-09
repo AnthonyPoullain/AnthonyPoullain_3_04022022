@@ -23,6 +23,7 @@ li {
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 body {
@@ -36,6 +37,9 @@ img {
   object-position: center;
 }
 
+main {
+  margin-top: 65px;
+}
 main > * > * {
   @include container;
 }
