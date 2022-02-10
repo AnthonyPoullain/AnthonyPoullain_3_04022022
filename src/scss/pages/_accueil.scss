@@ -1,6 +1,7 @@
 @use "../utils/variables" as *;
 @use "../utils/mixins" as *;
 @use "../components/cards" as *;
+@use "../components/buttons" as *;
 
 .location {
   background: $color-medium-gray;
