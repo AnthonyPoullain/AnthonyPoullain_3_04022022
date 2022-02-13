@@ -208,25 +208,14 @@ footer > * {
   background: #99e2d0;
 }
 .restaurants__card-heart {
-  font-size: 1.5rem;
   position: absolute;
   right: 25px;
   bottom: 30px;
-  cursor: pointer;
-  transition: color 150ms ease-in-out;
 }
-.restaurants__card-heart .far {
-  transform: translateX(125%);
-}
-.restaurants__card-heart .fas {
-  opacity: 0;
-  transition: opacity 150ms ease-in-out 150ms;
-}
-.restaurants__card-heart:hover {
-  color: #9356dc;
-}
-.restaurants__card-heart:hover .fas {
-  opacity: 1;
+.restaurants__card-heart .fas::after {
+  background: #f6f6f6;
+  background-clip: text;
+  -webkit-background-clip: text;
 }
 
 .menu__card {
@@ -359,48 +348,43 @@ footer > * {
 }
 
 /* heart button */
-.heart-container {
-  position: relative;
-  transform: scale(0.625);
-  width: 40px;
-  height: 40px;
-  margin-right: 10px;
+.heart-btn {
+  font-size: 1.5rem;
+  cursor: pointer;
 }
-.heart-clip {
-  display: block;
-  width: 100%;
-  height: 100%;
-  position: relative;
-  overflow: hidden;
-  clip-path: url(#svgPath);
-  transition: 0.2s ease-in-out 0.2;
-}
-.heart-clip:hover {
-  transform: scale(1.1);
-}
-.heart-clip:hover::before {
-  transform: scale(1);
-  opacity: 1;
-}
-.heart-clip::before {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
+.heart-btn .fas {
   background: linear-gradient(0deg, #ff79da 0%, #9356dc 100%);
-  opacity: 0;
-  transform: scale(0);
-  transition: transform 0.2s linear, opacity 0.2s linear;
-  transform-origin: center 60%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
 }
-.heart-stroke {
-  width: 100%;
-  height: 100%;
+.heart-btn .fas::after {
+  content: "\f004";
   position: absolute;
-  top: 0;
   left: 0;
-  fill: black;
+  top: 0;
+  height: 100%;
+  transition: height 0.4s ease-in-out;
+  -webkit-text-stroke: 1.5px black;
+  /* background: $color-light-gray; */
+  /* background-clip: text; */
+  /* -webkit-background-clip: text; */
+  -webkit-text-fill-color: transparent;
+}
+.heart-btn:hover .fas::after {
+  height: 0;
+  animation-name: strokeFade;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+}
+@keyframes strokeFade {
+  from {
+    -webkit-text-stroke: 1.5px black;
+  }
+  to {
+    -webkit-text-stroke: 0px transparent;
+  }
 }
 
 .location {
@@ -503,8 +487,13 @@ footer > * {
   justify-content: space-between;
   padding-bottom: 40px;
 }
-.menu__title i {
+.menu__heart {
   margin-right: 20px;
+}
+.menu__heart .fas::after {
+  background: #eaeaea;
+  background-clip: text;
+  -webkit-background-clip: text;
 }
 .menu__dish-type {
   margin-bottom: 40px;

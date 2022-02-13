@@ -114,28 +114,14 @@
     }
 
     &-heart {
-      font-size: 1.5rem;
       position: absolute;
       right: 25px;
       bottom: 30px;
-      cursor: pointer;
-      transition: color 150ms ease-in-out;
 
-      .far {
-        transform: translateX(125%);
-      }
-
-      .fas {
-        opacity: 0;
-        transition: opacity 150ms ease-in-out 150ms;
-      }
-
-      &:hover {
-        color: $color-primary;
-
-        .fas {
-          opacity: 1;
-        }
+      .fas::after {
+        background: $color-light-gray;
+        background-clip: text;
+        -webkit-background-clip: text;
       }
     }
   }

@@ -22,52 +22,50 @@
 }
 
 /* heart button */
-.heart {
-  &-container {
+.heart-btn {
+  font-size: 1.5rem;
+  cursor: pointer;
+
+  .fas {
+    background: $gradient-heart;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     position: relative;
-    transform: scale(0.625);
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
+
+    &::after {
+      content: "\f004";
+      position: absolute;
+      left: 0;
+      top: 0;
+
+      height: 100%;
+      transition: height 0.4s ease-in-out;
+
+      -webkit-text-stroke: 1.5px black;
+      /* background: $color-light-gray; */
+      /* background-clip: text; */
+      /* -webkit-background-clip: text; */
+      -webkit-text-fill-color: transparent;
+    }
   }
 
-  &-clip {
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: relative;
-    overflow: hidden;
-    clip-path: url(#svgPath);
-    transition: 0.2s ease-in-out 0.2;
+  &:hover {
+    .fas::after {
+      height: 0;
 
-    &:hover {
-      transform: scale(1.1);
-      &::before {
-        transform: scale(1);
-        opacity: 1;
+      animation-name: strokeFade;
+      animation-duration: 0.8s;
+      animation-fill-mode: forwards;
+
+      @keyframes strokeFade {
+        from {
+          -webkit-text-stroke: 1.5px black;
+        }
+        to {
+          -webkit-text-stroke: 0px transparent;
+        }
       }
     }
-
-    &::before {
-      content: "";
-      display: block;
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      background: $gradient-heart;
-      opacity: 0;
-      transform: scale(0);
-      transition: transform 0.2s linear, opacity 0.2s linear;
-      transform-origin: center 60%;
-    }
-  }
-
-  &-stroke {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    fill: black;
   }
 }
