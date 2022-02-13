@@ -8,15 +8,15 @@ Libraries / frameworks / processors: Sass
 
 ## Installation
  
-Install dependencies. From root folder:
+1- Install dependencies
 ```
 npm install
 ```
-Run sass:
+2- Run sass:
 ```
 npm run sass
 ```
-Run live server from root.
+3- Run live server
 
 ## Ressources
 https://openclassrooms.com
