@@ -1,6 +1,6 @@
 # OpenClassrooms - Project #3
 ![preview image](https://user.oc-static.com/upload/2020/08/24/15982605908418_Maquettes%20Ohmyfood.jpg)
-Projet 3 de la formation "Développeur d'Application: Javascript React" d'OpenClassroms "Dynamisez une page web avec des animations CSS".<br>
+Projet 3 de la formation "Développeur d'Application - Javascript React" d'OpenClassroms "Dynamisez une page web avec des animations CSS".<br>
 
 Intégration d'une maquette mobile first.<br>
 
@@ -8,17 +8,15 @@ Libraries / frameworks / processors: Sass
 
 ## Installation
  
-Clone this repo<br>
-
-Install dependencies.<br>From root folder:
+1- Install dependencies
 ```
 npm install
 ```
-Use sass:
+2- Run sass:
 ```
 npm run sass
 ```
-Then run a live server from the "Public" folder.
+3- Run live server
 
 ## Ressources
 https://openclassrooms.com
