@@ -1,0 +1,64 @@
+@use "../base/base";
+@use "../utils/mixins" as *;
+@use "../utils/variables" as *;
+
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: white;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  z-index: 10;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: loadingScreen 5s linear forwards;
+
+  @keyframes loadingScreen {
+    94% {
+      opacity: 1;
+    }
+    99% {
+      opacity: 0;
+      height: 100vh;
+    }
+    100% {
+      opacity: 0;
+      height: 0;
+    }
+  }
+
+  &__circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin: 0 3px;
+    animation: scaling 2s ease-in-out infinite;
+
+    @for $i from 1 through 3 {
+      &:nth-child(#{$i}n) {
+        animation-delay: #{$i * 0.15}s;
+      }
+    }
+
+    @keyframes scaling {
+      0%,
+      100% {
+        transform: scale(0.2);
+        background: $color-primary;
+      }
+      30%,
+      70% {
+        transform: scale(1);
+        background: $color-secondary;
+      }
+      35%,
+      55% {
+        background: $color-tertiary;
+      }
+    }
+  }
+}

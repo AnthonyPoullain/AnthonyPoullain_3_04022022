@@ -13,7 +13,6 @@
     position: relative;
     margin-bottom: 20px;
     cursor: default;
-    transition: 150ms ease-in-out;
 
     &--highlight {
       background: $color-primary-light;
@@ -66,11 +65,6 @@
     margin-bottom: 15px;
     position: relative;
     transition: 150ms ease-in-out;
-
-    /* &:hover { */
-    /*   transform: scale(1.01); */
-    /*   box-shadow: $shadow-cards-hover; */
-    /* } */
 
     a {
       width: fit-content;

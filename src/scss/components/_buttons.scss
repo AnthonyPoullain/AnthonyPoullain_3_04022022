@@ -39,6 +39,7 @@
       left: 0;
       top: 0;
 
+      /* replace 3 next instances of 'height' by 'opacity' or vice versa */
       height: 100%;
       transition: height 0.4s ease-in-out;
 
