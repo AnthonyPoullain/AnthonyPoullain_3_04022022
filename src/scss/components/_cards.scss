@@ -3,6 +3,7 @@
 
 .usage {
   &__card {
+    color: $color-gray;
     display: flex;
     align-items: center;
     padding: 25px 35px 25px 37px;
@@ -13,15 +14,37 @@
     position: relative;
     margin-bottom: 20px;
     cursor: default;
+    animation: highlight 6s ease-in-out infinite;
 
-    &--highlight {
-      background: $color-primary-light;
-      box-shadow: $shadow-cards-hover;
-
-      .fas {
+    @keyframes highlight {
+      33%,
+      66% {
+        background: $color-light-gray;
+        box-shadow: $shadow-cards;
+        color: $color-gray;
+      }
+      44%,
+      55% {
+        background: $color-primary-light;
+        box-shadow: $shadow-cards-hover;
         color: $color-primary;
       }
     }
+
+    @for $i from 1 through 3 {
+      &:nth-child(#{$i}n) {
+        animation-delay: #{$i * 2}s;
+      }
+    }
+
+    /* &--highlight { */
+    /*   background: $color-primary-light; */
+    /*   box-shadow: $shadow-cards-hover; */
+    /**/
+    /*   .fas { */
+    /*     color: $color-primary; */
+    /*   } */
+    /* } */
   }
 
   &__number {
@@ -38,7 +61,7 @@
   }
 
   i {
-    color: $color-gray;
+    /* color: $color-gray; */
     margin-right: 20px;
   }
 
