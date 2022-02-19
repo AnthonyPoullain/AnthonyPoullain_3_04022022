@@ -27,12 +27,6 @@
 
   &__heart {
     margin-right: 20px;
-
-    .fas::after {
-      background: $color-medium-gray;
-      background-clip: text;
-      -webkit-background-clip: text;
-    }
   }
 
   &__dish-type {

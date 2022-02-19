@@ -24,47 +24,64 @@
 /* heart button */
 .heart-btn {
   font-size: 1.5rem;
-  cursor: pointer;
 
-  .fas {
-    background: $gradient-heart;
+  i {
+    cursor: pointer;
+    background: transparent;
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1.5px black;
     position: relative;
+    padding: 0 1.5px;
 
     &::after {
-      content: "\f004";
+      content: "";
       position: absolute;
-      left: 0;
-      top: 0;
-
-      /* replace 3 next instances of 'height' by 'opacity' or vice versa */
-      height: 100%;
-      transition: height 0.4s ease-in-out;
-
-      -webkit-text-stroke: 1.5px black;
-      /* background: $color-light-gray; */
-      /* background-clip: text; */
-      /* -webkit-background-clip: text; */
-      -webkit-text-fill-color: transparent;
+      width: 0px;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 50%;
+      aspect-ratio: 1/1;
+      opacity: 1;
+      background-color: $color-primary;
+      border-radius: 100%;
     }
-  }
 
-  &:hover {
-    .fas::after {
-      height: 0;
+    &:hover {
+      background: $gradient-heart;
+      background-clip: text;
+      -webkit-background-clip: text;
+      animation: fade 1s forwards;
 
-      animation-name: strokeFade;
-      animation-duration: 0.8s;
-      animation-fill-mode: forwards;
-
-      @keyframes strokeFade {
+      @keyframes fade {
         from {
           -webkit-text-stroke: 1.5px black;
+          background: transparent;
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
         }
         to {
-          -webkit-text-stroke: 0px transparent;
+          background: $gradient-heart;
+          background-clip: text;
+          -webkit-text-stroke: 1.5px transparent;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+      }
+
+      &::after {
+        animation: circle 1s ease-out forwards;
+        @keyframes circle {
+          0% {
+            width: 0;
+            opacity: 1;
+          }
+          100% {
+            width: 50px;
+            opacity: 0;
+          }
         }
       }
     }

@@ -111,7 +111,7 @@ footer > * {
   text-decoration: underline;
 }
 
-.loader {
+.loading-screen {
   position: fixed;
   top: 0;
   left: 0;
@@ -123,47 +123,70 @@ footer > * {
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: loadingScreen 4s linear forwards;
+  animation: loadingScreen 3s linear forwards;
 }
 @keyframes loadingScreen {
   94% {
     opacity: 1;
   }
-  99% {
+  99.99% {
     opacity: 0;
-    height: 100vh;
+    transform: translateX(0);
   }
   100% {
-    height: 0;
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+.loader {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  animation: wholeSpin 3s linear infinite;
+}
+@keyframes wholeSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 .loader__circle {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  margin: 0 3px;
-  animation: scaling 2s ease-in-out infinite;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+  border: 7px solid transparent;
+  border-bottom: 7px solid #9356dc;
 }
-.loader__circle:nth-child(1n) {
-  animation-delay: 0.15s;
+.loader__circle-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+  border: 7px solid #eaeaea;
+  z-index: -1;
 }
 .loader__circle:nth-child(2n) {
-  animation-delay: 0.3s;
+  animation: spin 1s ease-in-out infinite 0.28s;
 }
 .loader__circle:nth-child(3n) {
-  animation-delay: 0.45s;
+  animation: spin 1s ease-in-out infinite 0.42s;
 }
-@keyframes scaling {
-  0%, 100% {
-    transform: scale(0.2);
-    background: #9356dc;
+.loader__circle:nth-child(4n) {
+  animation: spin 1s ease-in-out infinite 0.56s;
+}
+.loader__circle:nth-child(5n) {
+  animation: spin 1s ease-in-out infinite 0.7s;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0);
   }
-  30%, 70% {
-    transform: scale(1);
-    background: #ff79da;
-  }
-  35%, 55% {
-    background: #99e2d0;
+  100% {
+    transform: rotate(360deg);
   }
 }
 
@@ -180,35 +203,27 @@ footer > * {
   margin-bottom: 20px;
   cursor: default;
   animation: highlight 6s ease-in-out infinite;
-  /* &--highlight { */
-  /*   background: $color-primary-light; */
-  /*   box-shadow: $shadow-cards-hover; */
-  /**/
-  /*   .fas { */
-  /*     color: $color-primary; */
-  /*   } */
-  /* } */
 }
 @keyframes highlight {
-  33%, 66% {
+  33%, 77% {
     background: #f6f6f6;
     box-shadow: rgba(50, 50, 93, 0.15) 0px 6px 12px -2px, rgba(0, 0, 0, 0.1) 0px 3px 7px -3px;
     color: #7e7e7e;
   }
-  44%, 55% {
+  44%, 66% {
     background: #f5edfe;
     box-shadow: rgba(50, 50, 93, 0.15) 0px 6px 12px -2px, rgba(0, 0, 0, 0.1) 0px 6px 12px -3px;
     color: #9356dc;
   }
 }
 .usage__card:nth-child(1n) {
-  animation-delay: 2s;
+  animation-delay: 1.7s;
 }
 .usage__card:nth-child(2n) {
-  animation-delay: 4s;
+  animation-delay: 3.4s;
 }
 .usage__card:nth-child(3n) {
-  animation-delay: 6s;
+  animation-delay: 5.1s;
 }
 .usage__number {
   height: 25px;
@@ -286,11 +301,6 @@ footer > * {
   position: absolute;
   right: 25px;
   bottom: 30px;
-}
-.restaurants__card-heart .fas::after {
-  background: #f6f6f6;
-  background-clip: text;
-  -webkit-background-clip: text;
 }
 
 .menu__card {
@@ -425,41 +435,62 @@ footer > * {
 /* heart button */
 .heart-btn {
   font-size: 1.5rem;
-  cursor: pointer;
 }
-.heart-btn .fas {
-  background: linear-gradient(0deg, #ff79da 0%, #9356dc 100%);
+.heart-btn i {
+  cursor: pointer;
+  background: transparent;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  position: relative;
-}
-.heart-btn .fas::after {
-  content: "\f004";
-  position: absolute;
-  left: 0;
-  top: 0;
-  /* replace 3 next instances of 'height' by 'opacity' or vice versa */
-  height: 100%;
-  transition: height 0.4s ease-in-out;
   -webkit-text-stroke: 1.5px black;
-  /* background: $color-light-gray; */
-  /* background-clip: text; */
-  /* -webkit-background-clip: text; */
-  -webkit-text-fill-color: transparent;
+  position: relative;
+  padding: 0 1.5px;
 }
-.heart-btn:hover .fas::after {
-  height: 0;
-  animation-name: strokeFade;
-  animation-duration: 0.8s;
-  animation-fill-mode: forwards;
+.heart-btn i::after {
+  content: "";
+  position: absolute;
+  width: 0px;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  aspect-ratio: 1/1;
+  opacity: 1;
+  background-color: #9356dc;
+  border-radius: 100%;
 }
-@keyframes strokeFade {
+.heart-btn i:hover {
+  background: linear-gradient(0deg, #ff79da 0%, #9356dc 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: fade 1s forwards;
+}
+@keyframes fade {
   from {
     -webkit-text-stroke: 1.5px black;
+    background: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
   to {
-    -webkit-text-stroke: 0px transparent;
+    background: linear-gradient(0deg, #ff79da 0%, #9356dc 100%);
+    background-clip: text;
+    -webkit-text-stroke: 1.5px transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+.heart-btn i:hover::after {
+  animation: circle 1s ease-out forwards;
+}
+@keyframes circle {
+  0% {
+    width: 0;
+    opacity: 1;
+  }
+  100% {
+    width: 50px;
+    opacity: 0;
   }
 }
 
@@ -565,11 +596,6 @@ footer > * {
 }
 .menu__heart {
   margin-right: 20px;
-}
-.menu__heart .fas::after {
-  background: #eaeaea;
-  background-clip: text;
-  -webkit-background-clip: text;
 }
 .menu__dish-type {
   margin-bottom: 40px;

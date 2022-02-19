@@ -18,13 +18,13 @@
 
     @keyframes highlight {
       33%,
-      66% {
+      77% {
         background: $color-light-gray;
         box-shadow: $shadow-cards;
         color: $color-gray;
       }
       44%,
-      55% {
+      66% {
         background: $color-primary-light;
         box-shadow: $shadow-cards-hover;
         color: $color-primary;
@@ -33,18 +33,9 @@
 
     @for $i from 1 through 3 {
       &:nth-child(#{$i}n) {
-        animation-delay: #{$i * 2}s;
+        animation-delay: #{$i * 1.7}s;
       }
     }
-
-    /* &--highlight { */
-    /*   background: $color-primary-light; */
-    /*   box-shadow: $shadow-cards-hover; */
-    /**/
-    /*   .fas { */
-    /*     color: $color-primary; */
-    /*   } */
-    /* } */
   }
 
   &__number {
@@ -134,12 +125,6 @@
       position: absolute;
       right: 25px;
       bottom: 30px;
-
-      .fas::after {
-        background: $color-light-gray;
-        background-clip: text;
-        -webkit-background-clip: text;
-      }
     }
   }
 }
