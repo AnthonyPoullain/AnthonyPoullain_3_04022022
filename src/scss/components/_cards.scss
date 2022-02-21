@@ -52,7 +52,6 @@
   }
 
   i {
-    /* color: $color-gray; */
     margin-right: 20px;
   }
 
@@ -62,6 +61,7 @@
   }
 }
 
+/* restaurant cards */
 .restaurants {
   @media screen and (min-width: 768px) {
     &__cards {
@@ -119,6 +119,21 @@
       font-weight: 500;
       color: $color-tertiary-dark;
       background: $color-tertiary;
+    }
+
+    &--new {
+      &::after {
+        content: "Nouveau";
+        position: absolute;
+        right: 12px;
+        top: 12px;
+        padding: 10px;
+        border-radius: 3px;
+        line-height: 0.7;
+        font-weight: 500;
+        color: $color-tertiary-dark;
+        background: $color-tertiary;
+      }
     }
 
     &-heart {
