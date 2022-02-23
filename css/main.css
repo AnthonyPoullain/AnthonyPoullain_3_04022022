@@ -190,6 +190,7 @@ footer > * {
   }
 }
 
+/* usage cards */
 .usage__card {
   color: #7e7e7e;
   display: flex;
@@ -315,6 +316,7 @@ footer > * {
   bottom: 30px;
 }
 
+/* menu cards */
 .menu__card {
   padding: 15px;
   height: 65px;
@@ -515,6 +517,7 @@ footer > * {
 }
 .location__text {
   font-weight: 500;
+  font-size: 1rem;
   color: #353535;
   line-height: 1;
   margin: 20px 0;

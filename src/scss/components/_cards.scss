@@ -1,6 +1,7 @@
 @use "../utils/variables" as *;
 @use "../utils/mixins" as *;
 
+/* usage cards */
 .usage {
   &__card {
     color: $color-gray;
@@ -144,6 +145,7 @@
   }
 }
 
+/* menu cards */
 .menu {
   &__card {
     padding: 15px;
