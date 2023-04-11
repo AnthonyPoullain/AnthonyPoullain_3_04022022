@@ -13,6 +13,8 @@ This application is designed to help clients make reservations for a restaurant 
 
 <img width="200px" src="https://user-images.githubusercontent.com/68517837/231085249-73e99fad-7a62-4247-8db4-65f0f2911111.gif" />
 
+See LIVE demo on github pages [here](https://anthonypoullain.github.io/AnthonyPoullain_3_04022022/)
+
 </div>
 
 ## 🎯 Goals of this project
