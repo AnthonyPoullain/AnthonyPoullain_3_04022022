@@ -1,14 +1,40 @@
-# OpenClassrooms - Project #3
-![preview image](https://user.oc-static.com/upload/2020/08/24/15982605908418_Maquettes%20Ohmyfood.jpg)
-Projet 3 de la formation "Développeur d'Application - Javascript React" d'OpenClassroms "Dynamisez une page web avec des animations CSS".<br>
+<div align="center">
 
-Intégration d'une maquette mobile first.<br>
+# Project 03 - OhMyFood: Restaurant reservation app
+![HTML5](https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![SASS](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)
 
-Libraries / frameworks / processors: Sass
 
-## Installation
- 
-1- Install dependencies
+This repo contains the source code to run the frontend for the restaurant reservation app **OhMyFood**, from project **#03** of **OpenClassrooms' Javascript & React developer course**.
+
+This application is designed to help clients make reservations for a restaurant and choose their menu in advance.
+
+
+<img width="400px" src="" />
+
+</div>
+
+## 🎯 Goals of this project
+
+The goal of this project was to get familiar with SASS, and make the app more dynamic with smooth CSS animations (Hover effects & page load animation).
+
+### What was required
+
+- Integrate mobile first application design
+- No desktop design given, but should be browsable on bigger screens
+- Use Sass to build the UI
+- Make the app dynamic with smooth animations
+
+## 📝 Installation
+
+### Prerequisites
+- [Node.js](https://nodejs.org/en/)
+- [NPM](https://www.npmjs.com/)
+
+
+### Install
+1- install dependencies
 ```
 npm install
 ```
@@ -16,10 +42,11 @@ npm install
 ```
 npm run sass
 ```
-3- Run live server
+3- Run live server (or similar)
+```
+live-server
+```
 
-## Ressources
-https://openclassrooms.com
+## 📃 Acknowledgments
 
-## Contributeurs
-Anthony Poullain
+- Thanks to [OpenClassrooms](https://openclassrooms.com/en/) for providing the course material and project specifications.
