@@ -11,7 +11,7 @@ This repo contains the source code to run the frontend for the restaurant reserv
 This application is designed to help clients make reservations for a restaurant and choose their menu in advance.
 
 
-<img width="400px" src="" />
+<img width="200px" src="https://user-images.githubusercontent.com/68517837/231085249-73e99fad-7a62-4247-8db4-65f0f2911111.gif" />
 
 </div>
 
